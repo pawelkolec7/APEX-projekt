@@ -1,0 +1,199 @@
+INSERT INTO Stanowiska(nazwa_stanowiska, placa_min, placa_max)
+VALUES ('Sprzedawca', 3000, 4000);
+
+INSERT INTO Stanowiska(nazwa_stanowiska, placa_min, placa_max)
+VALUES ('Magazynier', 3000, 3800);
+
+INSERT INTO Stanowiska(nazwa_stanowiska, placa_min, placa_max)
+VALUES ('Kierownik sklepu', 5000, 7000);
+
+INSERT INTO Stanowiska(nazwa_stanowiska, placa_min, placa_max)
+VALUES ('Specjalista ds. zamówień', 3500, 4500);
+
+INSERT INTO Stanowiska(nazwa_stanowiska, placa_min, placa_max)
+VALUES ('Pracownik serwisu', 3200, 4200);
+
+INSERT INTO Pracownicy
+(imie, nazwisko, telefon, email, stanowisko, placa, premia)
+VALUES
+('Jan', 'Kowalski', '123456789', 'jan.kowalski@sklep.pl', 'Sprzedawca', 3500, 500);
+
+INSERT INTO Pracownicy
+(imie, nazwisko, telefon, email, stanowisko, placa, premia)
+VALUES
+('Anna', 'Nowak', '987654321', 'anna.nowak@sklep.pl', 'Kierownik sklepu', 6000, 1000);
+
+INSERT INTO Pracownicy
+(imie, nazwisko, telefon, email, stanowisko, placa, premia)
+VALUES
+('Piotr', 'Zieliński', '500600700', 'piotr.zielinski@sklep.pl', 'Magazynier', 3200, 300);
+
+INSERT INTO Pracownicy
+(imie, nazwisko, telefon, email, stanowisko, placa, premia)
+VALUES
+('Tomasz', 'Wójcik', '505010101', 'tomasz.wojcik@sklep.pl', 'Specjalista ds. zamówień', 4000, 500);
+
+INSERT INTO Pracownicy
+(imie, nazwisko, telefon, email, stanowisko, placa, premia)
+VALUES
+('Michał', 'Lewandowski', '777888999', 'michal.lewandowski@sklep.pl', 'Pracownik serwisu', 3700, 400);
+
+INSERT INTO Urlopy
+(id_pracownika, data_rozpoczecia, data_zakonczenia, typ_urlopu)
+VALUES
+(1, TO_DATE('2025-01-10','YYYY-MM-DD'), TO_DATE('2025-01-15','YYYY-MM-DD'), 'Urlop wypoczynkowy');
+
+INSERT INTO Urlopy
+(id_pracownika, data_rozpoczecia, data_zakonczenia, typ_urlopu)
+VALUES
+(3, TO_DATE('2025-01-20','YYYY-MM-DD'), TO_DATE('2025-01-25','YYYY-MM-DD'), 'Urlop wypoczynkowy');
+
+INSERT INTO Adresy
+(kod_pocztowy, miejscowosc, ulica, nr_domu, nr_mieszkania, kraj)
+VALUES
+('01-234', 'Warszawa', 'Marszałkowska', '10', '1', 'Polska');
+
+INSERT INTO Adresy
+(kod_pocztowy, miejscowosc, ulica, nr_domu, nr_mieszkania, kraj)
+VALUES
+('00-001', 'Warszawa', 'Krakowskie Przedmieście', '2', NULL, 'Polska');
+
+INSERT INTO Adresy
+(kod_pocztowy, miejscowosc, ulica, nr_domu, nr_mieszkania, kraj)
+VALUES
+('31-500', 'Kraków', 'Floriańska', '15', '5', 'Polska');
+
+INSERT INTO Adresy
+(kod_pocztowy, miejscowosc, ulica, nr_domu, nr_mieszkania, kraj)
+VALUES
+('50-001', 'Wrocław', 'Świdnicka', '7', NULL, 'Polska');
+
+INSERT INTO Adresy
+(kod_pocztowy, miejscowosc, ulica, nr_domu, nr_mieszkania, kraj)
+VALUES
+('80-100', 'Gdańsk', 'Długa', '20', '10', 'Polska');
+
+INSERT INTO Adresy
+(kod_pocztowy, miejscowosc, ulica, nr_domu, nr_mieszkania, kraj)
+VALUES
+('60-123', 'Poznań', 'Półwiejska', '8', '3', 'Polska');
+
+INSERT INTO Klienci
+(imie, nazwisko, telefon, email, nr_karty_rabatowej)
+VALUES
+('Paweł', 'Kaczmarek', '666111222', 'pawel.kaczmarek@example.com', 'RB-0001');
+
+INSERT INTO Klienci
+(imie, nazwisko, telefon, email, nr_karty_rabatowej)
+VALUES
+('Katarzyna', 'Wiśniewska', '666111333', 'katarzyna.wisniewska@example.com', 'RB-0002');
+
+INSERT INTO Klienci
+(imie, nazwisko, telefon, email, nr_karty_rabatowej)
+VALUES
+('Marek', 'Duda', '666111444', 'marek.duda@example.com', 'RB-0003');
+
+INSERT INTO Klienci
+(imie, nazwisko, telefon, email, nr_karty_rabatowej)
+VALUES
+('Magdalena', 'Zając', '666111555', 'magdalena.zajac@example.com', 'RB-0004');
+
+INSERT INTO Klienci
+(imie, nazwisko, telefon, email, nr_karty_rabatowej)
+VALUES
+('Adam', 'Jabłoński', '666111666', 'adam.jablonski@example.com', 'RB-0005');
+
+INSERT INTO Zamowienia
+(id_klienta, id_adresu, id_pracownika, data_zlozenia, sposob_dostawy, status, komentarz)
+VALUES
+(1, 1, 1, TO_DATE('2025-01-02','YYYY-MM-DD'), 'Kurier', 'w trakcie', 'Proszę o szybką wysyłkę');
+
+INSERT INTO Zamowienia
+(id_klienta, id_adresu, id_pracownika, data_zlozenia, sposob_dostawy, status, komentarz)
+VALUES
+(2, 2, 4, TO_DATE('2025-01-05','YYYY-MM-DD'), 'Odbiór w sklepie', 'zakończone', NULL);
+
+INSERT INTO Zamowienia
+(id_klienta, id_adresu, id_pracownika, data_zlozenia, sposob_dostawy, status, komentarz)
+VALUES
+(3, 3, 1, TO_DATE('2025-01-10','YYYY-MM-DD'), 'Kurier', 'wysłane', NULL);
+
+INSERT INTO Zamowienia
+(id_klienta, id_adresu, id_pracownika, data_zlozenia, sposob_dostawy, status, komentarz)
+VALUES
+(1, 1, 1, TO_DATE('2025-01-11','YYYY-MM-DD'), 'Kurier', 'zakończone', 'Klient zadowolony');
+
+INSERT INTO Zamowienia
+(id_klienta, id_adresu, id_pracownika, data_zlozenia, sposob_dostawy, status, komentarz)
+VALUES
+(4, 4, 2, TO_DATE('2025-01-15','YYYY-MM-DD'), 'Kurier', 'w trakcie', NULL);
+
+INSERT INTO Zamowienia
+(id_klienta, id_adresu, id_pracownika, data_zlozenia, sposob_dostawy, status, komentarz)
+VALUES
+(5, 5, 1, TO_DATE('2025-01-25','YYYY-MM-DD'), 'Odbiór w sklepie', 'w trakcie', 'Klient stały');
+
+INSERT INTO Zamowienia
+(id_klienta, id_adresu, id_pracownika, data_zlozenia, sposob_dostawy, status, komentarz)
+VALUES
+(3, 6, 4, TO_DATE('2025-01-26','YYYY-MM-DD'), 'Kurier', 'w trakcie', 'Problem z adresem');
+
+INSERT INTO Kategorie(nazwa, opis)
+VALUES ('Telewizory', 'Telewizory LCD, LED, OLED');
+
+INSERT INTO Kategorie(nazwa, opis)
+VALUES ('AGD', 'Sprzęt gospodarstwa domowego');
+
+INSERT INTO Kategorie(nazwa, opis)
+VALUES ('Smartfony', 'Telefony komórkowe nowej generacji');
+
+INSERT INTO Kategorie(nazwa, opis)
+VALUES ('Komputery', 'Desktopy, laptopy i akcesoria');
+
+INSERT INTO Kategorie(nazwa, opis)
+VALUES ('Audio', 'Sprzęt audio: głośniki, słuchawki, soundbary');
+
+INSERT INTO Producent(nazwa, opis, telefon, email)
+VALUES ('Sony', 'Producent elektroniki z Japonii', '+8131234567', 'info@sony.com');
+
+INSERT INTO Producent(nazwa, opis, telefon, email)
+VALUES ('Samsung', 'Koreański producent urządzeń elektronicznych', '+82101234567', 'contact@samsung.com');
+
+INSERT INTO Producent(nazwa, opis, telefon, email)
+VALUES ('LG', 'Elektronika i AGD z Korei Południowej', '+82105555555', 'info@lg.com');
+
+INSERT INTO Producent(nazwa, opis, telefon, email)
+VALUES ('Apple', 'Amerykański producent elektroniki i oprogramowania', '+1650987654', 'support@apple.com');
+
+INSERT INTO Producent(nazwa, opis, telefon, email)
+VALUES ('Dell', 'Amerykański producent komputerów', '+18005552323', 'contact@dell.com');
+
+INSERT INTO Producent(nazwa, opis, telefon, email)
+VALUES ('Asus', 'Tajwański producent komputerów i elektroniki', '+8862123456', 'info@asus.com');
+
+INSERT INTO Produkty(nazwa, kategoria, opis, producent)
+VALUES ('Sony Bravia KDL-55', 'Telewizory', '55-calowy telewizor LCD z HDR', 'Sony');
+
+INSERT INTO Produkty(nazwa, kategoria, opis, producent)
+VALUES ('Samsung Galaxy S25', 'Smartfony', 'Smartfon z 6.5-calowym wyświetlaczem', 'Samsung');
+
+INSERT INTO Produkty(nazwa, kategoria, opis, producent)
+VALUES ('LG OLED CX', 'Telewizory', '65-calowy telewizor OLED', 'LG');
+
+INSERT INTO Produkty(nazwa, kategoria, opis, producent)
+VALUES ('Apple iPhone 15', 'Smartfony', 'Najnowszy iPhone z procesorem A18', 'Apple');
+
+INSERT INTO Produkty(nazwa, kategoria, opis, producent)
+VALUES ('Dell XPS 15', 'Komputery', 'Laptop 15-calowy z Intel Core i7', 'Dell');
+
+INSERT INTO Produkty(nazwa, kategoria, opis, producent)
+VALUES ('Asus ZenBook 14', 'Komputery', 'Ultrabook 14-calowy z AMD Ryzen', 'Asus');
+
+INSERT INTO Produkty(nazwa, kategoria, opis, producent)
+VALUES ('LG Prałka F4WV710S1', 'AGD', 'Pralka ładowana od frontu', 'LG');
+
+INSERT INTO Produkty(nazwa, kategoria, opis, producent)
+VALUES ('Samsung Lodówka RL38T775', 'AGD', 'Lodówka typu combi NoFrost', 'Samsung');
+
+INSERT INTO Ilosc(zamawiana_ilosc, id_produktu, id_zamowienia)
+VALUES (7, 2, 4); 
